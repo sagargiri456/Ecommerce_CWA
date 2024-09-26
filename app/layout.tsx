@@ -32,7 +32,6 @@ export default function RootLayout({
         <ClerkProvider >
           <ModalProvider />
           {children}
-
         </ClerkProvider>
       </body>
     </html>
