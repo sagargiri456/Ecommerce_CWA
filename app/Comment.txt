@@ -1,0 +1,47 @@
+######### APP ROUTING #################################
+
+If we write folders like this in our app folder 
+(root) then it will not create a route regarding
+this folder for example it will not create a route called
+/root
+
+But in this way my route state of the app gonna have 
+a layout very different from auth and dashboard
+
+meaning i can use different layouts for all the different 
+sections of my app using layout.tsx
+
+######SOMETHING ABOUT SHADCN UI #########
+
+most of the components can be added just by using commands
+but there are some special cases like the form components
+where you will have to 
+
+####################Layout me kaise pas hota hai children############################
+
+kisi function ke andar parameter pas karte hain kuch
+aese for example fun(argument) to ye argument function
+ke andar chala jata hai par kisi component me pas karte hain
+kuch aese
+
+<Layout>
+    {children}//yahan pe children pas ho jayega do line niche dekho
+</Layout>
+
+export default function RootLayout({ // is function me
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <ClerkProvider>
+      <html lang="en">
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        >
+          {children}
+        </body>
+      </html>
+    </ClerkProvider>
+  );
+}
