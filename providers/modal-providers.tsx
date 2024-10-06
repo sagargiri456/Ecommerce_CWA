@@ -27,7 +27,7 @@ const ModalProvider = () => {
 
     useEffect(() => {
         setIsMounted(true);
-        console.log("Mounted:", true);  // Add this to check if it's setting correctly
+        console.log("Mounted:", true); 
     }, []);
 
     {/*

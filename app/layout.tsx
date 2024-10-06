@@ -3,6 +3,9 @@ import localFont from "next/font/local";
 import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
 import ModalProvider from "@/providers/modal-providers";
+import prismadb from '@/lib/prismadb'
+import { ToasterProvider } from "@/providers/toast-provider";
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -26,14 +29,23 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const store = prismadb.store
+  {
+    /*
+      Now we can perfomr various functions such as prismadb.store.delete to delete a entity.
+      or prismadb.store.find excetra.
+    */
+  }
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <ClerkProvider >
+    <ClerkProvider >
+      <html lang="en">
+        <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+          <ToasterProvider />
           <ModalProvider />
           {children}
-        </ClerkProvider>
-      </body>
-    </html>
+
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

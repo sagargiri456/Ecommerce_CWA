@@ -7,7 +7,7 @@ import { useStoreModal } from "@/hooks/use-store-modal";
 // import { UserButton } from "@clerk/nextjs";
 
 
-const setupPage = () => {
+const SetupPage = () => {
     const onOpen = useStoreModal((state) => state.onOpen);
     const isOpen = useStoreModal((state) => state.isOpen);
 
@@ -19,16 +19,7 @@ const setupPage = () => {
         }
     }, [isOpen, onOpen]);
 
-    return (
-        <div className="p-4">
-            {/* <UserButton afterSignOutUrl="/"/>
-            Here we have added afterSignOutUrl because this redirects
-            the user to the root page after sign out otherwise if we don;t have set it to "/"
-            then it would have redirected to Clerks Homepage which we do not want
-            */}
-            Root Page   
-        </div>
-    );
+    return null;
 }
 
-export default setupPage;
+export default SetupPage;
